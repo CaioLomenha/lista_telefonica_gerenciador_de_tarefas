@@ -27,6 +27,7 @@ def editar_contato(lista_telefonica, indice_contato, novo_nome, novo_email, novo
         print(f"Contato {indice_contato} atualizado")
     else:
         print("Contato não existe")
+    return
 
 def contato_favorito(lista_telefonica, indice_contato):
     indice_atualizado = int(indice_contato) - 1
@@ -37,15 +38,17 @@ def contato_favorito(lista_telefonica, indice_contato):
             lista_telefonica[indice_atualizado]["Favorito"] = True
     else:
         print("Contato não existe")
+    return
 
 def ver_favorito(lista_telefonica):
-    for indice, contato in enumerate(lista_telefonica):
+    for indice, contato in enumerate(lista_telefonica, start=1):
         status = "★" if contato["Favorito"] else " "
         nome_do_contato = contato["Nome do Contato"]
         telefone = contato["Telefone"]
         email = contato["Email"]
         if contato["Favorito"] == True:
                 print(f"{indice}- [{status}] Nome: {nome_do_contato}, Telefone: {telefone}, Email: {email}")
+        return        
 
 def apagar_contato(lista_telefonica, indice_contato):
     for indice, contato in enumerate(lista_telefonica):
@@ -56,6 +59,7 @@ def apagar_contato(lista_telefonica, indice_contato):
         else:
             print("Contato não existe")
     print(f"Contato {indice_contato} deletado")
+    return
         
 
 lista_telefonica = []
